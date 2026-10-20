@@ -1,0 +1,58 @@
+
+name: Build Android APK - RedWhiteFootball 2027
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Android-
+            Library-
+
+      - name: Free disk space
+        run: |
+          sudo apt-get clean
+          df -h
+
+      - name: Build with Unity Builder
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: Android
+          buildName: RedWhiteFootball_2027
+          androidVersionCode: 1
+          androidAppBundle: false
+          androidKeystoreName: user.keystore
+          androidKeystorePass: ${{ secrets.KEYSTORE_PASS }}
+          androidKeyAliasName: ${{ secrets.KEY_ALIAS }}
+          androidKeyAliasPass: ${{ secrets.KEY_PASS }}
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: RedWhiteFootball_2027-APK
+          path: build/Android
+
+# Secrets المطلوبة في GitHub Repo Settings > Secrets:
+# UNITY_LICENSE: محتوى ملف .ulf (GameCI activation) أو استخدم Unity License Server
+# UNITY_EMAIL, UNITY_PASSWORD: حساب Unity الخاص بك
+# ANDROID_KEYSTORE_BASE64: base64 للـ keystore (اختياري)
+# KEYSTORE_PASS, KEY_ALIAS, KEY_PASS
+# إنشاء keystore محلياً: keytool -genkey -v -keystore user.keystore -alias redwhite -keyalg RSA -keysize 2048 -validity 10000

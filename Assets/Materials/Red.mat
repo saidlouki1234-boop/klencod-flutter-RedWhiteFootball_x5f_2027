@@ -1,0 +1,8 @@
+%YAML 1.1
+--- !u!21 &2100001
+Material:
+  m_Name: Red
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9b4de1291de7d9d93f4e1, type: 3}
+  m_SavedProperties:
+    m_Colors:
+    - _BaseColor: {r: 0.82, g: 0.05, b: 0.12, a: 1}

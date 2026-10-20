@@ -1,0 +1,10 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  productName: RedWhiteFootball 2027
+  companyName: RedWhite Studio
+  bundleVersion: 1.0.0
+  AndroidBundleVersionCode: 1
+  androidGamepadSupportLevel: 0

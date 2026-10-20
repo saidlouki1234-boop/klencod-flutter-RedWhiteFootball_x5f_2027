@@ -1,0 +1,58 @@
+[
+  {
+    "id": "CA",
+    "nameAr": "النادي الإفريقي",
+    "nameEn": "Club Africain",
+    "primary": "#D10A1F",
+    "secondary": "#FFFFFF"
+  },
+  {
+    "id": "EST",
+    "nameAr": "الترجي الرياضي",
+    "nameEn": "Esperance",
+    "primary": "#E5C100",
+    "secondary": "#9C0000"
+  },
+  {
+    "id": "ESS",
+    "nameAr": "النجم الساحلي",
+    "nameEn": "Etoile Sahel",
+    "primary": "#CC0000",
+    "secondary": "#FFFFFF"
+  },
+  {
+    "id": "CSS",
+    "nameAr": "النادي الصفاقسي",
+    "nameEn": "CS Sfaxien",
+    "primary": "#000000",
+    "secondary": "#FFFFFF"
+  },
+  {
+    "id": "ACA",
+    "nameAr": "نادي العاصمة",
+    "nameEn": "Capital FC",
+    "primary": "#D10A1F",
+    "secondary": "#FFFFFF"
+  },
+  {
+    "id": "WHI",
+    "nameAr": "النسور البيضاء",
+    "nameEn": "White Eagles",
+    "primary": "#FFFFFF",
+    "secondary": "#D10A1F"
+  },
+  {
+    "id": "RED",
+    "nameAr": "الحمر",
+    "nameEn": "Reds United",
+    "primary": "#B00000",
+    "secondary": "#FFFFFF"
+  },
+  {
+    "id": "BLU",
+    "nameAr": "الزرق",
+    "nameEn": "Blues City",
+    "primary": "#0A2A9A",
+    "secondary": "#FFFFFF"
+  }
+]
